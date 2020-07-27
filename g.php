@@ -36,5 +36,4 @@ $token = trim(fgets(STDIN));
          echo color("green","-] Proses Telah Selesai [-\n");
 	 echo "\n";
          }
-}
 //  }
