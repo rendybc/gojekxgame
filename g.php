@@ -52,24 +52,6 @@ Nomor GoJek Kamu : " . $number . "
 ";
              echo "
 ";
-         } else {
-             echo "
-";
-             echo "Yah Kode OTP Salah, Coba Kamu Ulangi Lagi Deh!
-";
-             echo "
-";
-             goto otp;
-         }
-     } else {
-         echo "
-";
-         echo "Yah Gagal Mengirim Kode OTP, Gunakan Nomor Yang Sudah Terdaftar Di GOJEK Yah!
-";
-         echo "
-";
-         goto ulang;
-}
 echo color("white","Token: ");
 $token = trim(fgets(STDIN));
 echo "\n".color("white","Claim?: y/n ");
@@ -115,5 +97,21 @@ echo "\n".color("white","Claim?: y/n ");
         echo "\n".color("white"," 2. ".$voucher2);
         echo "\n".color("white"," 3. ".$voucher3);
         echo "\n".color("white"," 4. ".$voucher4);
-     }
+         } else {
+             echo "
+";
+             echo "Yah Kode OTP Salah, Coba Kamu Ulangi Lagi Deh!
+";
+             echo "
+";
+             goto otp;
+         }
+     } else {
+         echo "
+";
+         echo "Yah Gagal Mengirim Kode OTP, Gunakan Nomor Yang Sudah Terdaftar Di GOJEK Yah!
+";
+         echo "
+";
+         goto ulang;
 }
