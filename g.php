@@ -113,3 +113,4 @@ echo "\n".color("white","Claim?: y/n ");
         echo "\n".color("white"," 3. ".$voucher3);
         echo "\n".color("white"," 4. ".$voucher4);
   }
+}
