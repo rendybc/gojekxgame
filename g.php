@@ -1,5 +1,5 @@
 <?php
-include "O.php";
+include "rendygoods.php";
 	echo color("white","\e[61m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n");
 	echo "\n";
 echo color("white","╭━━╮
@@ -52,13 +52,29 @@ Nomor GoJek Kamu : " . $number . "
 ";
              echo "
 ";
+         } else {
+             echo "
+";
+             echo "Yah Kode OTP Salah, Coba Kamu Ulangi Lagi Deh!
+";
+             echo "
+";
+             goto otp;
+         }
+     } else {
+         echo "
+";
+         echo "Yah Gagal Mengirim Kode OTP, Gunakan Nomor Yang Sudah Terdaftar Di GOJEK Yah!
+";
+         echo "
+";
+}
 echo color("white","Token: ");
 $token = trim(fgets(STDIN));
 echo "\n".color("white","Claim?: y/n ");
         $pilihan = trim(fgets(STDIN));
         if($pilihan == "y" || $pilihan == "Y"){
-        sleep(5);
-        echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬Claim Voc▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬Claim Ulang Voc▬▬▬▬▬▬▬▬▬▬▬▬");
         echo "\n".color("white","Claim A..");
         echo "\n".color("white","Please wait");
         for($a=1;$a<=3;$a++){
@@ -71,7 +87,7 @@ echo "\n".color("white","Claim?: y/n ");
         echo "\n".color("green"," Message: ".$message);
         }else{
         echo "\n".color("white"," Message: ".$message);
-        sleep(10);
+        sleep(5);
         }
         echo "\n".color("white","Claim B..");
         echo "\n".color("white","Please wait");
@@ -85,7 +101,7 @@ echo "\n".color("white","Claim?: y/n ");
         echo "\n".color("green"," Message: ".$message);
         }else{
         echo "\n".color("white"," Message: ".$message);
-        sleep(1);
+        sleep(2);
         $cekvoucher = request('/gopoints/v3/wallet/vouchers?limit=10&page=1', $token);
         $total = fetch_value($cekvoucher,'"total_vouchers":',',');
         $voucher1 = getStr1('"title":"','",',$cekvoucher,"1");
@@ -97,5 +113,5 @@ echo "\n".color("white","Claim?: y/n ");
         echo "\n".color("white"," 2. ".$voucher2);
         echo "\n".color("white"," 3. ".$voucher3);
         echo "\n".color("white"," 4. ".$voucher4);
-}
+  }
 //  }
